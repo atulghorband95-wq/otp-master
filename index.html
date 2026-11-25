@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0f14">
+  <title>OTP MASTER | Dashboard</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="app">
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+      <div class="brand-icon">O</div>
+      <div>
+        <h2>OTP MASTER</h2>
+        <small>SMS PLATFORM</small>
+      </div>
+      <button class="close-menu" onclick="closeMenu()">×</button>
+    </div>
+
+    <div class="menu-label">MAIN MENU</div>
+
+    <nav>
+      <a href="#" class="nav-link active" data-page="dashboard">
+        <span>▦</span> Dashboard
+      </a>
+      <a href="#" class="nav-link" data-page="numbers">
+        <span>▣</span> Buy Numbers
+      </a>
+      <a href="#" class="nav-link" data-page="emails">
+        <span>✉</span> Buy Emails
+      </a>
+
+      <div class="menu-label">ACCOUNT</div>
+
+      <a href="#" class="nav-link" data-page="wallet">
+        <span>＋</span> + Recharge
+      </a>
+      <a href="#" class="nav-link" data-page="wallet" data-scroll="tx">
+        <span>◷</span> Transaction History
+      </a>
+      <a href="#" class="nav-link" data-page="history">
+        <span>▤</span> Numbers History
+      </a>
+      <a href="#" class="nav-link" data-page="mailhistory">
+        <span>✉</span> Mail History
+      </a>
+
+      <div class="menu-label">TOOLS</div>
+
+      <a href="#" class="nav-link" data-page="sms">
+        <span>⌕</span> SMS Checker
+      </a>
+      <a href="#" class="nav-link" data-page="updates">
+        <span>◉</span> Latest Updates
+      </a>
+      <a href="#" class="nav-link" data-page="support">
+        <span>◌</span> Support
+      </a>
+
+      <div class="menu-label">PREFERENCES</div>
+
+      <a href="#" class="nav-link" data-page="profile">
+        <span>♙</span> My Profile
+      </a>
+      <a href="#" class="nav-link" data-page="settings">
+        <span>⚙</span> Settings
+      </a>
+      <a href="#" class="nav-link" id="nav-admin" data-page="admin">
+        <span>★</span> Admin Panel
+      </a>
+      <a href="#" class="nav-link" id="nav-logout" onclick="handleLogout(event)" style="color:#ef4444;">
+        <span>⏻</span> Logout
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="help-card">
+        <div class="help-icon">?</div>
+        <b>Need help?</b>
+        <p>Our support team is here for you.</p>
+        <button onclick="showPage('support')">Get Support →</button>
+      </div>
+      <small class="version">OTP MASTER v1.0.0</small>
+    </div>
+
+  </aside>
+
+  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+  <main class="main">
+
+    <header class="topbar">
+      <div class="top-left">
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div>
+          <h3 id="page-title">Dashboard</h3>
+          <small id="page-subtitle">Your account overview</small>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button id="header-wallet-pill" onclick="showPage('wallet')" style="display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:rgba(34,197,94,0.14);border:1px solid rgba(34,197,94,0.35);color:#22c55e;font-weight:700;font-size:13px;cursor:pointer;">
+          <span>₹</span><span id="header-balance">0.00</span>
+        </button>
+        <button class="icon-btn" onclick="showPage('updates')">♧</button>
+        <div class="user-avatar" id="header-avatar">U</div>
+      </div>
+    </header>
+
+    <section class="content" id="content"></section>
+
+  </main>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
